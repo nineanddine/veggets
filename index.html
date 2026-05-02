@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nine and Dine | Veggets | Your Trusted Taste</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header">
+        <h3>YOUR ORDER (<span id="cartCount">0</span>)</h3>
+        <button class="close-cart" onclick="toggleCart()">×</button>
+    </div>
+
+    <div id="cartItemsList" class="cart-body">
+        <p style="text-align:center; color:#999; margin-top:50px;">Your cart is empty</p>
+    </div>
+
+    <div class="cart-footer">
+        <div class="promo-container">
+            <span class="promo-icon">🏷️</span>
+            <input type="text" placeholder="Enter a promo code">
+        </div>
+        <div class="total-row">
+            <span>Estimated total</span>
+            <span class="estimated-total">₱<span id="estimatedTotal">0.00</span></span>
+        </div>
+        <div class="cart-btns">
+            <a href="#contact" class="checkout-now-btn" onclick="toggleCart()">Checkout Now</a>
+            <button class="continue-shopping" onclick="toggleCart()">Continue Shopping</button>
+        </div>
+    </div>
+</div>
+
+<div id="cartOverlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+<header>
+    <div class="logo">Nine and Dine</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Menu</a>
+        <a href="#contact">Contact</a>
+        <button class="cart-icon-btn" onclick="toggleCart()">🛒 Cart</button>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-content">
+        <span class="badge">Nine and Dine Presents</span>
+        <h2>The Perfect <br><span> Veggets</span></h2>
+        <p>Crunchy, plant-based Veggets and Filipino favorites delivered straight to your door with integrity and high standards.</p>
+        <div class="hero-actions">
+            <a href="#products" class="btn-primary">Order Now</a>
+            <a href="#about" class="btn-secondary">Our Story</a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="section about">
+    <div class="about-container">
+        <div class="about-header">
+            <h2>About Us</h2>
+            <p>Nine and Dine introduces Veggets, a plant-based alternative to traditional nuggets. What sets us apart is our commitment to nutrition, integrity, and high standards in food safety.</p>
+        </div>
+
+        <div class="mission-vision-grid">
+            <div class="mv-card">
+                <span class="icon">🎯</span>
+                <h3>Our Mission</h3>
+                <p>To provide high-quality, plant-based food options that don't compromise on taste, ensuring everyone has access to healthy and sustainable meals.</p>
+            </div>
+
+            <div class="mv-card">
+                <span class="icon">👁️</span>
+                <h3>Our Vision</h3>
+                <p>To become a leading name in nutritious plant-based dining, inspiring a healthier lifestyle for families across the country, one bite at a time.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="products" class="menu-section">
+    <div class="menu-overlay">
+        <h2 style="color: white; margin-bottom: 40px; text-align: center;">Our Menu</h2>
+        <div class="menu-grid">
+            
+            <div class="menu-card">
+                <div class="menu-img-container">
+                    <img src="images/rice3.jpg" alt="Rice Meal 3pcs">
+                </div>
+                <h3>Rice Meal 3pcs</h3>
+                <p class="price">₱54</p>
+                <div class="qty-control">
+                    <button onclick="decreaseQty('qty1')">-</button>
+                    <span id="qty1">1</span>
+                    <button onclick="increaseQty('qty1')">+</button>
+                </div>
+                <button class="add-btn" onclick="addToCart('Rice Meal 3pcs', 54, 'qty1', 'images/rice3.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-container">
+                    <img src="images/rice4.jpg" alt="Rice Meal 4pcs">
+                </div>
+                <h3>Rice Meal 4pcs</h3>
+                <p class="price">₱66</p>
+                <div class="qty-control">
+                    <button onclick="decreaseQty('qty2')">-</button>
+                    <span id="qty2">1</span>
+                    <button onclick="increaseQty('qty2')">+</button>
+                </div>
+                <button class="add-btn" onclick="addToCart('Rice Meal 4pcs', 66, 'qty2', 'images/rice4.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-container">
+                    <img src="images/rice5.jpg" alt="Rice Meal 5pcs">
+                </div>
+                <h3>Rice Meal 5pcs</h3>
+                <p class="price">₱79</p>
+                <div class="qty-control">
+                    <button onclick="decreaseQty('qty3')">-</button>
+                    <span id="qty3">1</span>
+                    <button onclick="increaseQty('qty3')">+</button>
+                </div>
+                <button class="add-btn" onclick="addToCart('Rice Meal 5pcs', 79, 'qty3', 'images/rice5.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-container">
+                    <img src="images/solo3.png" alt="Solo 3pcs">
+                </div>
+                <h3>Solo 3pcs</h3>
+                <p class="price">₱49</p>
+                <div class="qty-control">
+                    <button onclick="decreaseQty('qty4')">-</button>
+                    <span id="qty4">1</span>
+                    <button onclick="increaseQty('qty4')">+</button>
+                </div>
+                <button class="add-btn" onclick="addToCart('Solo 3pcs', 49, 'qty4', 'images/solo3.png')">Add to Cart</button>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-container">
+                    <img src="images/solo4.png" alt="Solo 4pcs">
+                </div>
+                <h3>Solo 4pcs</h3>
+                <p class="price">₱52</p>
+                <div class="qty-control">
+                    <button onclick="decreaseQty('qty5')">-</button>
+                    <span id="qty5">1</span>
+                    <button onclick="increaseQty('qty5')">+</button>
+                </div>
+                <button class="add-btn" onclick="addToCart('Solo 4pcs', 52, 'qty5', 'images/solo4.png')">Add to Cart</button>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-container">
+                    <img src="images/solo5.png" alt="Solo 5pcs">
+                </div>
+                <h3>Solo 5pcs</h3>
+                <p class="price">₱64</p>
+                <div class="qty-control">
+                    <button onclick="decreaseQty('qty6')">-</button>
+                    <span id="qty6">1</span>
+                    <button onclick="increaseQty('qty6')">+</button>
+                </div>
+                <button class="add-btn" onclick="addToCart('Solo 5pcs', 64, 'qty6', 'images/solo5.png')">Add to Cart</button>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-container">
+                    <img src="images/solo20.jpg" alt="Solo 20pcs">
+                </div>
+                <h3>Solo 20pcs</h3>
+                <p class="price">₱255</p>
+                <div class="qty-control">
+                    <button onclick="decreaseQty('qty7')">-</button>
+                    <span id="qty7">1</span>
+                    <button onclick="increaseQty('qty7')">+</button>
+                </div>
+                <button class="add-btn" onclick="addToCart('Solo 20pcs', 255, 'qty7', 'images/solo20.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-container">
+                    <img src="images/rice.jpg" alt="Rice">
+                </div>
+                <h3>Rice</h3>
+                <p class="price">₱30</p>
+                <div class="qty-control">
+                    <button onclick="decreaseQty('qty8')">-</button>
+                    <span id="qty8">1</span>
+                    <button onclick="increaseQty('qty8')">+</button>
+                </div>
+                <button class="add-btn" onclick="addToCart('Rice', 30, 'qty8', 'images/rice.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-container">
+                    <img src="images/bbq-sauce.jpg" alt="Dip Sauce" id="sauceImg">
+                </div>
+                <h3>Dip Sauce</h3>
+                <div class="flavor-selection" style="margin: 10px 0;">
+                    <select id="sauceFlavor" onchange="updateSauceImage()" style="padding: 8px; width: 100%; border-radius: 5px; border:none; font-weight:bold; cursor:pointer;">
+                        <option value="BBQ Sauce" data-img="images/bbq.png">BBQ Sauce</option>
+                        <option value="Mayo Garlic" data-img="images/mayo.png">Mayo Garlic</option>
+                        <option value="Ketchup" data-img="images/ketchup.png">Ketchup</option>
+                        <option value="Gravy" data-img="images/gravy.png">Gravy</option>
+                    </select>
+                </div>
+                <p class="price">₱10</p>
+                <div class="qty-control">
+                    <button onclick="decreaseQty('qty9')">-</button>
+                    <span id="qty9">1</span>
+                    <button onclick="increaseQty('qty9')">+</button>
+                </div>
+                <button class="add-btn" onclick="addSauceToCart()">Add to Cart</button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="checkout-section">
+    <div class="container">
+        <h2>Place Your Order</h2>
+        <p>Fill out the details below to finalize your plant-based feast.</p>
+        
+        <div class="checkout-container">
+            <div class="input-group">
+                <input type="text" id="name" placeholder="Full Name">
+            </div>
+            
+            <div class="input-group">
+                <input type="text" id="address" placeholder="Delivery Address">
+                <small class="helper-text">e.g., Street Name, Barangay, Valenzuela City</small>
+            </div>
+            
+            <div class="input-group">
+                <textarea id="summary" placeholder="Your order summary will appear here..." readonly></textarea>
+            </div>
+            
+            <button onclick="checkout()" class="order-btn">Place Order Now</button>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <a href="#home">Home</a>
+            <a href="#about">About Story</a>
+            <a href="#products">Menu</a>
+            <a href="javascript:void(0)" onclick="toggleCart()">View Cart</a>
+        </div>
+        
+        <div class="footer-box">
+            <h3>Location</h3>
+            <a href="https://www.google.com/maps?q=4031+Gen+T+De+Leon+Valenzuela+City" target="_blank" class="location-link">
+                📍 4031 Gen T De Leon<br>
+                Valenzuela City, Metro Manila
+            </a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Operating Hours</h3>
+            <ul class="hours-list" style="list-style: none; padding: 0; font-size: 13px;">
+                <li><span style="font-weight: bold; color: var(--primary-green);">Mon - Fri:</span> 10:00 AM - 8:00 PM</li>
+                <li><span style="font-weight: bold; color: var(--primary-green);">Saturday:</span> 11:00 AM - 9:00 PM</li>
+                <li style="opacity: 0.6;"><span>Sunday:</span> Closed</li>
+            </ul>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact Info</h3>
+            <a href="#">Nine & Dine</a>
+            <a href="tel:09937280860">📞 0993-728-0860</a>
+            <a href="mailto:nineanddine.veggets@gmail.com">📧 nineanddine.veggets@gmail.com</a>
+        </div>
+    </div>
+    <div class="credit">
+        created by <span>Nine and Dine</span> | all rights reserved
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
